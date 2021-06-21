@@ -1,7 +1,9 @@
 package main
 
 import (
-	"github.com/alevsk/go-app-template/pkg"
+	"fmt"
+
+	"github.com/Alevsk/go-app-template/pkg"
 	"github.com/minio/cli"
 )
 
@@ -19,7 +21,7 @@ var serverCmd = cli.Command{
 		},
 		cli.IntFlag{
 			Name:  "port",
-			Value: "8080",
+			Value: 8080,
 			Usage: "bind to specific HTTP port",
 		},
 	},
@@ -28,8 +30,8 @@ var serverCmd = cli.Command{
 // StartServer starts the app server
 func StartServer(ctx *cli.Context) error {
 
-	pkg.LogInfo(ctx.string("host"))
-	pkg.LogInfo(ctx.string("port"))
+	pkg.LogInfo(ctx.String("host"))
+	pkg.LogInfo(fmt.Sprintf("%d", ctx.Int("port")))
 
 	return nil
 }

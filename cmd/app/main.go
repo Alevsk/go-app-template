@@ -6,7 +6,7 @@ import (
 	"sort"
 	"time"
 
-	"github.com/alevsk/go-app-template/pkg"
+	"github.com/Alevsk/go-app-template/pkg"
 	"github.com/minio/cli"
 	"github.com/minio/pkg/console"
 	"github.com/minio/pkg/trie"
